@@ -1,38 +1,42 @@
-{% set version = "2.1.1" %}
+{% set version = "3.0.0" %}
 
 package:
-    name: palettable
-    version: {{ version }}
+  name: palettable
+  version: {{ version }}
 
 source:
-    fn: palettable-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/p/palettable/palettable-{{ version }}.tar.gz
-    md5: 60adcbda83e1eaa331c5fdc5dfbcc4ff
+  fn: palettable-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/palettable/palettable-{{ version }}.tar.gz
+  sha256: eed9eb0399386ff42f90ca61d4fa38a1819a93d5adfc2d546e3e2869d9972c31
 
 build:
-    number: 1
-    script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
-        - setuptools
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - setuptools
 
 test:
-    imports:
-        - palettable
-        - palettable.colorbrewer
-        - palettable.tableau
-        - palettable.wesanderson
+  imports:
+    - palettable
+    - palettable.cmocean
+    - palettable.colorbrewer
+    - palettable.cubehelix
+    - palettable.matplotlib
+    - palettable.mycarta
+    - palettable.tableau
+    - palettable.wesanderson
 
 about:
-    home: https://jiffyclub.github.io/palettable/
-    license: MIT
-    summary: Color palettes for Python
+  home: https://jiffyclub.github.io/palettable/
+  license: MIT
+  summary: 'Color palettes for Python.'
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
+  recipe-maintainers:
+    - ocefpaf
