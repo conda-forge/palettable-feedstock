@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Color palettes for Python
+Summary: Color palettes for Python.
 
 
 
