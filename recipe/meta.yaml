@@ -1,16 +1,16 @@
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: palettable
   version: {{ version }}
 
 source:
-  fn: palettable-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/palettable/palettable-{{ version }}.tar.gz
-  sha256: eed9eb0399386ff42f90ca61d4fa38a1819a93d5adfc2d546e3e2869d9972c31
+  sha256: 4c6f6531b93d97eb0bf4d707160626261de11470c47e2d017ac6bb569b5308aa
 
 build:
   number: 0
+  noarch: python
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
