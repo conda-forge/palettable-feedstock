@@ -11,12 +11,12 @@ source:
 build:
   number: 0
   noarch: python
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - setuptools
@@ -35,6 +35,7 @@ test:
 about:
   home: https://jiffyclub.github.io/palettable/
   license: MIT
+  license_file: license.txt
   summary: 'Color palettes for Python.'
 
 extra:
