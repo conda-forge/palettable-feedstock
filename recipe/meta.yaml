@@ -1,4 +1,4 @@
-{% set version = "3.2.0" %}
+{% set version = "3.3.0" %}
 
 package:
   name: palettable
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/palettable/palettable-{{ version }}.tar.gz
-  sha256: 8cfc5a045a395e23c964252181225ed38664482ca4856ac0ca49715b091de8e2
+  sha256: 72feca71cf7d79830cd6d9181b02edf227b867d503bec953cf9fa91bf44896bd
 
 build:
   number: 0
