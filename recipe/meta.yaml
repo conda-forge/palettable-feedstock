@@ -1,4 +1,4 @@
-{% set version = "3.3.0" %}
+{% set version = "3.3.1" %}
 
 package:
   name: palettable
@@ -6,15 +6,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/palettable/palettable-{{ version }}.tar.gz
-  sha256: 72feca71cf7d79830cd6d9181b02edf227b867d503bec953cf9fa91bf44896bd
+  sha256: 3ec242270e4ad045c03d037e5b28f477cc2d0acb7fd59269ad6e0d756acc5ea6
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
@@ -36,7 +36,7 @@ about:
   home: https://jiffyclub.github.io/palettable/
   license: MIT
   license_file: license.txt
-  summary: 'Color palettes for Python.'
+  summary: Color palettes for Python.
 
 extra:
   recipe-maintainers:
