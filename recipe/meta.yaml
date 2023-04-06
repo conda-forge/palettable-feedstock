@@ -1,42 +1,39 @@
+{% set name = "palettable" %}
 {% set version = "3.3.1" %}
 
 package:
-  name: palettable
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/palettable/palettable-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/palettable-{{ version }}.tar.gz
   sha256: 3ec242270e4ad045c03d037e5b28f477cc2d0acb7fd59269ad6e0d756acc5ea6
 
 build:
-  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
-    - setuptools
+    - python >=3.6
 
 test:
   imports:
     - palettable
-    - palettable.cmocean
-    - palettable.colorbrewer
-    - palettable.cubehelix
-    - palettable.matplotlib
-    - palettable.mycarta
-    - palettable.tableau
-    - palettable.wesanderson
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://jiffyclub.github.io/palettable/
+  summary: Color palettes for Python
   license: MIT
   license_file: license.txt
-  summary: Color palettes for Python.
 
 extra:
   recipe-maintainers:
