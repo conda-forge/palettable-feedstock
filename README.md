@@ -7,7 +7,7 @@ Home: https://jiffyclub.github.io/palettable/
 
 Package license: MIT
 
-Summary: Color palettes for Python.
+Summary: Color palettes for Python
 
 Current build status
 ====================
